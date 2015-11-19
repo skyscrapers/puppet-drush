@@ -2,7 +2,7 @@ puppet-drush
 ===============
 
 [![Build
-Status](https://secure.travis-ci.org/previosnext/puppet-drush.png)](http://travis-ci.org/previosnext/puppet-drush)
+Status](https://secure.travis-ci.org/previousnext/puppet-drush.png)](http://travis-ci.org/previousnext/puppet-drush)
 
 This module installs [Drush](http://www.drush.org//), a command line shell and
 Unix scripting interface for Drupal.
