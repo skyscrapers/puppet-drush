@@ -1,0 +1,5 @@
+fixtures:
+  symlinks:
+    drush: "#{source_dir}"
+  repositories:
+    wget: git://github.com/maestrodev/puppet-wget.git
