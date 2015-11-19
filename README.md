@@ -11,7 +11,7 @@ Installation
 ------------
 
 Using the Puppet Module Tool, install the
-[`previousnext/drush`](http://forge.puppetlabs.com/previosnext/drush) by
+[`previousnext/drush`](http://forge.puppetlabs.com/previosnext/drush) module by
 running the following command:
 
     puppet module install previousnext/drush
@@ -74,4 +74,4 @@ for details.
 Acknowledgement
 ---------------
 
-puppet-drush is very heavily based on puppet-composer by William Durand.
+puppet-drush is very heavily based on [puppet-composer](https://github.com/willdurand/puppet-composer) by William Durand.
