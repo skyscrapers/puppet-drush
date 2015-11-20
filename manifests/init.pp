@@ -65,7 +65,7 @@ class drush (
     cwd     => $drush_target_dir,
     user    => $drush_user,
     unless  => "test -x ${drush_target_dir}/${drush_command_name}",
-    require => Exec['drush-test-dnwload'],
+    require => Exec['drush-test-download'],
   }
 
 }
