@@ -1,5 +1,5 @@
 {
-  "name": "pnx-drush",
+  "name": "previousnext-drush",
   "version": "0.0.1",
   "author": "PreviousNext",
   "license": "MIT",
@@ -32,17 +32,5 @@
         "7"
       ]
     }
-  ],
-  "types": [
-
-  ],
-  "checksums": {
-    "LICENSE": "4e97f08f69906816a6869a702fa52642",
-    "README.md": "619965ced937ba567754ac47652a77d7",
-    "Rakefile": "a1a87b266213b03b33f5e006d4df7925",
-    "manifests/init.pp": "73ca012fa452afbd9de7afebed1a6766",
-    "manifests/params.pp": "8e954f11f350232440b04a1b00e967c6",
-    "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
-    "spec/classes/drush_spec.rb": "92205b182b66dc655ffb55a65301e69e"
-  }
+  ]
 }
