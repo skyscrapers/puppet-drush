@@ -37,14 +37,14 @@ Include the `drush` class:
     include drush
 
 You can specify the command name you want to get, and the target directory (aka
-where to install Composer):
+where to install Drush):
 
     class { 'drush':
       command_name => 'drush',
       target_dir   => '/usr/local/bin'
     }
 
-You can specify a particular `user` that will be the owner of the Composer
+You can specify a particular `user` that will be the owner of the Drush
 executable:
 
     class { 'drush':
