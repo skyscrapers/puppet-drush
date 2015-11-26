@@ -11,7 +11,7 @@ Installation
 ------------
 
 Using the Puppet Module Tool, install the
-[`previousnext/drush`](http://forge.puppetlabs.com/previosnext/drush) module by
+[`previousnext/drush`](http://forge.puppetlabs.com/previousnext/drush) module by
 running the following command:
 
     puppet module install previousnext/drush

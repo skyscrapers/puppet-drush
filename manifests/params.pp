@@ -13,8 +13,8 @@
 # It may be imported or inherited by other classes.
 #
 class drush::params {
-  $phar_location = 'https://github.com/drush-ops/drush/releases/download/8.0.0-rc4/drush.phar'
-  $target_dir    = '/usr/local/bin'
+  $phar_location = 'http://files.drush.org/drush.phar'
+  $target_dir    = '/usr/bin'
   $command_name  = 'drush'
   $user          = 'root'
 }
