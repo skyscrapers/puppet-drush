@@ -22,7 +22,7 @@ describe 'drush', :type => :class do
   }
 
   describe 'with a given target_dir' do
-    let(:params) {{ :target_dir => '/usr/bin' }}
+    let(:params) {{ :target_dir => '/usr/local/bin' }}
 
     it { should contain_wget__fetch('drush-install') \
       .with_source('http://files.drush.org/drush.phar') \
@@ -71,19 +71,19 @@ describe 'drush', :type => :class do
     it { should contain_wget__fetch('drush-install') \
       .with_source('http://files.drush.org/drush.phar') \
       .with_execuser('pnx') \
-      .with_destination('/usr/local/bin/drush')
+      .with_destination('/usr/bin/drush')
     }
 
     it { should contain_exec('drush-test-download') \
-      .with_command('php /usr/local/bin/drush core-status') \
+      .with_command('php /usr/bin/drush core-status') \
       .with_user('pnx') \
-      .with_cwd('/usr/local/bin')
+      .with_cwd('/usr/bin')
     }
 
     it { should contain_exec('drush-fix-permissions') \
       .with_command('chmod a+x drush') \
       .with_user('pnx') \
-      .with_cwd('/usr/local/bin')
+      .with_cwd('/usr/bin')
     }
   end
 end
