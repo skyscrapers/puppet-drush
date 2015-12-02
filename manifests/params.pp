@@ -14,7 +14,7 @@
 #
 class drush::params {
   $version       = '7'
-  $target_dir    = "/opt"
-  $command_name  = "/usr/local/bin/drush"
+  $target_dir    = '/opt'
+  $command_name  = '/usr/local/bin/drush'
   $user          = 'root'
 }
