@@ -17,17 +17,13 @@ running the following command:
     puppet module install previousnext/drush
 
 Otherwise, clone this repository and make sure to install the proper
-dependencies ([`puppet-wget`](https://github.com/maestrodev/puppet-wget)):
+dependencies ([`puppet-composer`](https://github.com/willdurand/puppet-composer)):
 
     git clone git://github.com/previousnext/puppet-drush.git modules/drush
 
-**Important:** the right `puppet-wget` module is
-[maestrodev/puppet-wget](https://github.com/maestrodev/puppet-wget). You should
-**not** use any other `puppet-wget` module. Example42's module won't work for
-instance. So, please, run the following command:
-
-    git clone git://github.com/maestrodev/puppet-wget.git modules/wget
-
+**Important:** the right `puppet-composer` module is
+[willdurand/puppet-composer](https://github.com/willdurand/puppet-composer).
+**not** use any other `puppet-composer` module.
 
 Usage
 -----
@@ -36,12 +32,18 @@ Include the `drush` class:
 
     include drush
 
+You can specify the version you want to install:
+
+    class { 'drush':
+      version => '8',
+    }
+
 You can specify the command name you want to get, and the target directory (aka
 where to install Drush):
 
     class { 'drush':
-      command_name => 'drush',
-      target_dir   => '/usr/local/bin'
+      command_name => '/usr/local/bin/drush',
+      target_dir   => '/usr/local'
     }
 
 You can specify a particular `user` that will be the owner of the Drush
@@ -51,6 +53,17 @@ executable:
       user => 'foo',
     }
 
+It is possible to install multiple versions side by side, but remember to pass
+a custom command name for each if you do:
+
+    class { 'drush':
+      version      => '8',
+      command_name => '/usr/local/bin/drush8',
+    }
+
+    class { 'drush':
+      command_name => '/usr/local/bin/drush7',
+    }
 
 Running the tests
 -----------------
@@ -74,4 +87,4 @@ for details.
 Acknowledgement
 ---------------
 
-puppet-drush is very heavily based on [puppet-composer](https://github.com/willdurand/puppet-composer) by William Durand.
+puppet-drush is based on [puppet-composer](https://github.com/willdurand/puppet-composer) by William Durand.
