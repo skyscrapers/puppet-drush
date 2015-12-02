@@ -18,7 +18,7 @@
 #
 #   include drush::drush
 #
-#   class { 'drush':
+#   class { 'drush::drush':
 #     'version'    => '7',
 #     'target_dir' => '/opt',
 #     'link_name'  => '/usr/local/bin/drush',
@@ -26,11 +26,11 @@
 #   }
 #
 class drush::drush (
-  $version    = hiera('drush::version',    $drush::params::version),
-  $target_dir = hiera('drush::target_dir', $drush::params::target_dir),
-  $link_name  = hiera('drush::link_name',  $drush::params::link_name),
-  $user       = hiera('drush::user',       $drush::params::user),
-) inherits drush::params {
+  $version    = hiera('drush::version',    '7'),
+  $target_dir = hiera('drush::target_dir', '/opt'),
+  $link_name  = hiera('drush::link_name',  '/usr/local/bin/drush'),
+  $user       = hiera('drush::user',       'root'),
+) {
 
   # Make sure that the target dir exists and is writable by the user.
   file { "${target_dir}/drush-${version}":
