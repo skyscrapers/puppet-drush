@@ -28,20 +28,20 @@ Do **not** use any other `puppet-composer` module.
 Usage
 -----
 
-Include the `drush` class:
+Include the `drush::drush` class:
 
-    include drush
+    include drush::drush
 
 You can specify the version you want to install:
 
-    class { 'drush':
+    class { 'drush::drush':
       version => '8',
     }
 
 You can specify the command name you want to get, and the target directory (aka
 where to install Drush):
 
-    class { 'drush':
+    class { 'drush::drush':
       command_name => '/usr/local/bin/drush',
       target_dir   => '/usr/local'
     }
@@ -49,21 +49,34 @@ where to install Drush):
 You can specify a particular `user` that will be the owner of the Drush
 executable:
 
-    class { 'drush':
+    class { 'drush::drush':
       user => 'foo',
     }
 
 It is possible to install multiple versions side by side, but remember to pass
 a custom command name for each if you do:
 
-    class { 'drush':
+    class { 'drush::drush':
       version      => '8',
       command_name => '/usr/local/bin/drush8',
     }
 
-    class { 'drush':
+    class { 'drush::drush':
       command_name => '/usr/local/bin/drush7',
     }
+
+Or you can use hiera to specify drush resources:
+
+classes:
+  - drush
+
+drush:
+  drush7
+    version:   '7'
+    link_name: '/usr/local/bin/drush'
+  drush8
+    version:   '8'
+    link_name: '/usr/local/bin/drush8'
 
 Running the tests
 -----------------

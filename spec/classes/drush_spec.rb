@@ -1,9 +1,11 @@
 require 'spec_helper'
 
-describe 'drush', :type => :class do
+at_exit { RSpec::Puppet::Coverage.report! }
+
+describe 'drush::drush', :type => :class do
   let(:title) { 'drush' }
 
-  it { should contain_class('drush') }
+  it { should contain_class('drush::drush') }
 
   it { should contain_exec('drush-install-7') \
     .with_command('composer --no-dev require drush/drush 7') \
@@ -35,7 +37,7 @@ describe 'drush', :type => :class do
 
     it { should contain_file('/opt/drush-6') \
       .with_ensure('directory') \
-      .with_owner('root') \
+       .with_owner('root') \
       .with_mode('0755')
     }
 
@@ -80,7 +82,7 @@ describe 'drush', :type => :class do
     it { should contain_file('/opt/drush-7') \
       .with_ensure('directory') \
       .with_owner('durpal') \
-      .with_mode('0755')
+       .with_mode('0755')
     }
 
     it { should contain_file('/usr/local/bin/drush') \
@@ -89,8 +91,8 @@ describe 'drush', :type => :class do
     }
   end
 
-  describe 'with a given command_name' do
-    let(:params) {{ :command_name => '/usr/local/bin/drushicle' }}
+  describe 'with a given link_name' do
+    let(:params) {{ :link_name => '/usr/local/bin/drushicle' }}
 
     it { should contain_exec('drush-install-7') \
       .with_command('composer --no-dev require drush/drush 7') \
@@ -110,5 +112,4 @@ describe 'drush', :type => :class do
       .with_owner('root')
     }
   end
-
 end
