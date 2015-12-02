@@ -1,5 +1,6 @@
 fixtures:
   symlinks:
     drush: "#{source_dir}"
-  repositories:
-    wget: git://github.com/maestrodev/puppet-wget.git
+  forge_modules:
+    composer: "willdurand/composer"
+    wget: "maestrodev/wget"
