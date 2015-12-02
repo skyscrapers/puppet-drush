@@ -26,10 +26,10 @@
 #   }
 #
 class drush::drush (
-  $version    = $drush::params::version,
-  $target_dir = $drush::params::target_dir,
-  $link_name  = $drush::params::link_name,
-  $user       = $drush::params::user,
+  $version    = hiera('drush::version',    $drush::params::version),
+  $target_dir = hiera('drush::target_dir', $drush::params::target_dir),
+  $link_name  = hiera('drush::link_name',  $drush::params::link_name),
+  $user       = hiera('drush::user',       $drush::params::user),
 ) inherits drush::params {
 
   # Make sure that the target dir exists and is writable by the user.
