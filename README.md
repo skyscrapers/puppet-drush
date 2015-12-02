@@ -71,9 +71,14 @@ classes:
   - drush
 
 drush:
+  drush62
+    version:   '6.2'
+    link_name: '/usr/local/bin/drush-legacy'
+  drush67
+    version:   '6.7'
   drush7
     version:   '7'
-    link_name: '/usr/local/bin/drush'
+    link_name: '/usr/local/bin/drush7'
   drush8
     version:   '8'
     link_name: '/usr/local/bin/drush8'
