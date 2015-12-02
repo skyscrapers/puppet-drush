@@ -25,7 +25,7 @@
 #     'user'       => 'root',
 #   }
 #
-class drush::drush (
+define drush::drush (
   $version    = hiera('drush::version',    '7'),
   $target_dir = hiera('drush::target_dir', '/opt'),
   $link_name  = hiera('drush::link_name',  '/usr/local/bin/drush'),
