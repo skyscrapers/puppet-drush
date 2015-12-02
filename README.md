@@ -23,7 +23,7 @@ dependencies ([`puppet-composer`](https://github.com/willdurand/puppet-composer)
 
 **Important:** the right `puppet-composer` module is
 [willdurand/puppet-composer](https://github.com/willdurand/puppet-composer).
-**not** use any other `puppet-composer` module.
+Do **not** use any other `puppet-composer` module.
 
 Usage
 -----
