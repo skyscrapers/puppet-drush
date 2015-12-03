@@ -42,7 +42,7 @@ define drush::drush (
   # Grab drush via composer.
   exec { "drush-install-${version}":
     command     => "composer --no-dev require drush/drush ${version}",
-    path        => '/usr/bin:/bin:/usr/sbin:/sbin',
+    path        => '/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin',
     cwd         => "${target_dir}/drush-${version}",
     environment => ["COMPOSER_HOME=${target_dir}/drush-${version}"],
     user        => $user,
