@@ -4,7 +4,7 @@ describe 'drush::drush' do
   let(:title) { 'drush' }
 
   it { should contain_exec('drush-install-7') \
-    .with_command('composer --no-dev require drush/drush 7') \
+    .with_command('composer --prefer-dist require drush/drush 7') \
     .with_user('root') \
     .with_cwd('/opt/drush-7') \
     .with_environment('COMPOSER_HOME=/opt/drush-7')
@@ -25,7 +25,7 @@ describe 'drush::drush' do
     let(:params) {{ :version => '6' }}
 
     it { should contain_exec('drush-install-6') \
-      .with_command('composer --no-dev require drush/drush 6') \
+      .with_command('composer --prefer-dist require drush/drush 6') \
       .with_user('root') \
       .with_cwd('/opt/drush-6') \
       .with_environment('COMPOSER_HOME=/opt/drush-6')
@@ -47,7 +47,7 @@ describe 'drush::drush' do
     let(:params) {{ :target_dir => '/usr/local' }}
 
     it { should contain_exec('drush-install-7') \
-      .with_command('composer --no-dev require drush/drush 7') \
+      .with_command('composer --prefer-dist require drush/drush 7') \
       .with_user('root') \
       .with_cwd('/usr/local/drush-7') \
       .with_environment('COMPOSER_HOME=/usr/local/drush-7')
@@ -69,7 +69,7 @@ describe 'drush::drush' do
     let(:params) {{ :user => 'durpal' }}
 
     it { should contain_exec('drush-install-7') \
-      .with_command('composer --no-dev require drush/drush 7') \
+      .with_command('composer --prefer-dist require drush/drush 7') \
       .with_user('durpal') \
       .with_cwd('/opt/drush-7') \
       .with_environment('COMPOSER_HOME=/opt/drush-7')
@@ -91,7 +91,7 @@ describe 'drush::drush' do
     let(:params) {{ :link_name => '/usr/local/bin/drushicle' }}
 
     it { should contain_exec('drush-install-7') \
-      .with_command('composer --no-dev require drush/drush 7') \
+      .with_command('composer --prefer-dist require drush/drush 7') \
       .with_user('root') \
       .with_cwd('/opt/drush-7') \
       .with_environment('COMPOSER_HOME=/opt/drush-7')
