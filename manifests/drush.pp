@@ -44,7 +44,7 @@ define drush::drush (
     command     => "composer --prefer-dist require drush/drush ${version}",
     path        => '/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin',
     cwd         => "${target_dir}/drush-${version}",
-    environment => ["COMPOSER_HOME=${target_dir}/drush-${version}"],
+    environment => "COMPOSER_HOME=${target_dir}/drush-${version}",
     user        => $user,
     require     => [
       Class['composer']

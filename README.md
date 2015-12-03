@@ -93,8 +93,7 @@ Install the dependencies using [Bundler](http://gembundler.com):
 
 Run the following command:
 
-    BUNDLE_GEMFILE=.gemfile bundle exec rake spec
-
+    BUNDLE_GEMFILE=.gemfile bundle exec rake validate lint spec SPEC_OPTS='--format documentation'
 
 License
 -------
