@@ -3,11 +3,9 @@
 class drush {
 
   # We need composer.
-  include composer
-  class { 'composer':
-    'target_dir'   => '/usr/local/bin',
-    'user'         => 'root',
-    'command_name' => 'composer',
+  class {'composer':
+    command_name => 'composer',
+    target_dir   => '/usr/local/bin'
   }
 
   # Make all the hiera-defined drushes, my pretties!
