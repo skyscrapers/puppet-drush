@@ -1,6 +1,6 @@
 {
   "name": "previousnext-drush",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "author": "PreviousNext",
   "license": "MIT",
   "summary": "This module installs Drush, a command line utility for Drupal.",
@@ -9,12 +9,13 @@
   "issues_url": "https://github.com/previousnext/puppet-drush/issues",
   "tags": [
     "php",
+    "composer",
     "drush"
   ],
   "dependencies": [
     {
-      "name": "maestrodev/wget",
-      "version_requirement": ">=1.2.0"
+      "name": "willdurand/composer",
+      "version_requirement": ">=1.1.1"
     }
   ],
   "operatingsystem_support": [
