@@ -1,13 +1,6 @@
 # A master class for drush.
 
 class drush {
-
-  # We need composer.
-  class {'composer':
-    command_name => 'composer',
-    target_dir   => '/usr/local/bin'
-  }
-
   # Make all the hiera-defined drushes, my pretties!
   $drush = hiera_hash('drush', false)
   if $drush {
