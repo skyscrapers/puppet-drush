@@ -34,35 +34,35 @@ Include the `drush::drush` class:
 
 You can specify the version you want to install:
 
-    class { 'drush::drush':
+    drush::drush { 'drush8':
       version => '8',
     }
 
-You can specify the command name you want to get, and the target directory (aka
+You can specify the link name you want to get, and the target directory (aka
 where to install Drush):
 
-    class { 'drush::drush':
-      command_name => '/usr/local/bin/drush',
+    drush::drush { 'drush':
+      link_name => '/usr/local/bin/drush',
       target_dir   => '/usr/local'
     }
 
 You can specify a particular `user` that will be the owner of the Drush
-executable:
+directory:
 
-    class { 'drush::drush':
+    drush::drush { 'drush7':
       user => 'foo',
     }
 
 It is possible to install multiple versions side by side, but remember to pass
-a custom command name for each if you do:
+a custom link name for each if you do:
 
-    class { 'drush::drush':
+    drush::drush { 'drush8':
       version      => '8',
-      command_name => '/usr/local/bin/drush8',
+      link_name => '/usr/local/bin/drush8',
     }
 
-    class { 'drush::drush':
-      command_name => '/usr/local/bin/drush7',
+    drush::drush { 'drush7':
+      link_name => '/usr/local/bin/drush7',
     }
 
 Or you can use hiera to specify drush resources:
