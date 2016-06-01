@@ -45,6 +45,7 @@ define drush::drush (
     path        => '/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin',
     cwd         => "${target_dir}/drush-${version}",
     environment => "COMPOSER_HOME=${target_dir}/drush-${version}",
+    onlyif      => "test ! -f ${target_dir}/drush-${version}/vendor/bin/drush",
     user        => $user,
     require     => [
       Class['composer']
