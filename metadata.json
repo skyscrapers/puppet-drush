@@ -1,6 +1,6 @@
 {
   "name": "previousnext-drush",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "PreviousNext",
   "license": "MIT",
   "summary": "This module installs Drush, a command line utility for Drupal.",
