@@ -46,10 +46,7 @@ define drush::drush (
     cwd         => "${target_dir}/drush-${version}",
     environment => "COMPOSER_HOME=${target_dir}/drush-${version}",
     onlyif      => "test ! -f ${target_dir}/drush-${version}/vendor/bin/drush",
-    user        => $user,
-    require     => [
-      Class['composer']
-    ]
+    user        => $user
   }
 
   # Create a symlink.
